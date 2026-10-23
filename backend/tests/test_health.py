@@ -1,6 +1,6 @@
 from fastapi.testclient import TestClient
 
-from app import main
+from app.api.routes import health
 from app.main import app
 
 client = TestClient(app)
@@ -14,7 +14,7 @@ def test_health_db_ok():
 
 
 def test_health_db_down(monkeypatch):
-    monkeypatch.setattr(main, "check_db", lambda: False)
+    monkeypatch.setattr(health, "check_db", lambda: False)
 
     response = client.get("/health")
 

@@ -1,7 +1,7 @@
 from sqlalchemy import create_engine, text
 from sqlalchemy.exc import OperationalError
 
-from app.config import settings
+from app.core.config import settings
 
 engine = create_engine(settings.database_url, connect_args={"connect_timeout": 3})
 
