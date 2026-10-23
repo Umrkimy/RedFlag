@@ -1,8 +1,19 @@
 from fastapi import FastAPI
+from fastapi.responses import JSONResponse
+
+from app.db import check_db
 
 app = FastAPI()
 
 
 @app.get("/health")
-async def health():
-    return {"status": "ok"}
+def health():
+    db = check_db()
+
+    if not db:
+        return JSONResponse(
+            status_code=503,
+            content={"status": "unhealthy", "db": "error"},
+        )
+
+    return {"status": "ok", "db": "ok"}
