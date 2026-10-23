@@ -28,6 +28,7 @@ jobs:
 
     env:
       DATABASE_URL: postgresql+psycopg://redflag_user:ci_password@localhost:5432/redflag
+      OPENAI_API_KEY: "sk-test-dummy"
 
     runs-on: ubuntu-latest
     defaults:
