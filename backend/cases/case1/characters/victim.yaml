@@ -1,0 +1,21 @@
+id: victim
+name: Aina
+persona: Anxious and embarrassed, speaks cautiously, worried that people will blame her for falling for the scam.
+
+knows:
+  - She found the job advertisement on social media.
+  - The recruiter promised a high salary for simple online work.
+  - The recruiter suddenly stopped replying to her messages.
+
+hides:
+  - id: secret_paid_fee
+    fact: She transferred RM800 to a bank account provided by the recruiter as a registration and training fee.
+    unlock_by: ev_bank_transfer_receipt
+
+  - id: secret_told_to_keep_quiet
+    fact: The recruiter warned her not to tell anyone about the job until she started earning money.
+    unlock_by: ev_recruiter_chat_screenshot
+
+lies:
+  - claim: "I never paid the recruiter any money."
+    truth: She transferred RM800 to the recruiter as a registration and training fee.

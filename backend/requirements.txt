@@ -2,3 +2,4 @@ fastapi[standard]==0.159.1
 sqlalchemy==2.1.6
 psycopg[binary]==3.3.6
 pydantic-settings==2.16.1
+pyyaml==6.0.3
