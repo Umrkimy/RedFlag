@@ -11,6 +11,24 @@ permissions:
 
 jobs:
   test:
+    services:
+      db:
+        image: pgvector/pgvector:pg17
+        env:
+          POSTGRES_USER: redflag_user
+          POSTGRES_PASSWORD: ci_password
+          POSTGRES_DB: redflag
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U redflag_user"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 5
+
+    env:
+      DATABASE_URL: postgresql+psycopg://redflag_user:ci_password@localhost:5432/redflag
+
     runs-on: ubuntu-latest
     defaults:
       run:
