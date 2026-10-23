@@ -1,19 +1,7 @@
 from fastapi import FastAPI
-from fastapi.responses import JSONResponse
 
-from app.db import check_db
+from app.api.routes import health
 
 app = FastAPI()
 
-
-@app.get("/health")
-def health():
-    db = check_db()
-
-    if not db:
-        return JSONResponse(
-            status_code=503,
-            content={"status": "unhealthy", "db": "error"},
-        )
-
-    return {"status": "ok", "db": "ok"}
+app.include_router(health.router)
