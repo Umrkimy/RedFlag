@@ -19,3 +19,4 @@ hides:
 lies:
   - claim: "I never paid the recruiter any money."
     truth: She transferred RM800 to the recruiter as a registration and training fee.
+    exposed_by: ev_bank_transfer_receipt

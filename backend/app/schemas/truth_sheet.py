@@ -10,6 +10,7 @@ class HiddenFact(BaseModel):
 class Lie(BaseModel):
     claim: str
     truth: str
+    exposed_by: str
 
 
 class TruthSheet(BaseModel):
