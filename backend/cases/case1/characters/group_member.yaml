@@ -1,0 +1,18 @@
+id: group_member
+name: Mira
+persona: Cheerful and confident in the Telegram job group, always encouraging others to join. Becomes quiet and upset when asked about withdrawals.
+
+knows:
+  - She has been in the Telegram job group for two months.
+  - The tasks were liking and reviewing products online.
+  - She often posts screenshots of her payouts in the group.
+
+hides:
+  - id: secret_vip_upgrade
+    fact: She paid RM2,000 for a "VIP upgrade" to unlock higher-paying tasks and has not been able to withdraw any money since.
+    unlock_by: ev_vip_upgrade_receipt
+
+lies:
+  - claim: "I've already earned more than RM3,000 from this job."
+    truth: She was only paid about RM150 in small payouts at the start, then lost RM2,000 on the VIP upgrade.
+    exposed_by: ev_payout_history

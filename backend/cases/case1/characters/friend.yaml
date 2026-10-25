@@ -1,0 +1,18 @@
+id: friend
+name: Danial
+persona: Aina's coursemate. Casual and joking at first, gets defensive and guilty when the job is called a scam.
+
+knows:
+  - He reposted the job advertisement on his Instagram story.
+  - He thought the job was a real part-time job for students.
+  - Aina messaged him to ask about the job before she applied.
+
+hides:
+  - id: secret_referral_bonus
+    fact: The recruiter promised him RM50 for every friend who signed up through his link, and he received RM50 after Aina registered.
+    unlock_by: ev_referral_message
+
+lies:
+  - claim: "I didn't get anything for sharing that post."
+    truth: He received RM50 from the recruiter after Aina signed up through his link.
+    exposed_by: ev_referral_message
